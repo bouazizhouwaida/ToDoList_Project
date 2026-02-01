@@ -1,0 +1,134 @@
+/* Styles généraux pour la modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  display: block; /* Oblige la modal à être visible (peut être géré avec Angular via [ngClass]) */
+  background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Centre la boîte de dialogue */
+.modal-dialog {
+  margin: auto;
+  max-width: 500px; /* Largeur de la modal */
+  border: none;
+  outline: none;
+}
+
+/* Contenu de la modal */
+.modal-content {
+  background-color: #e5d4d2; /* Couleur de fond "rosé" */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  overflow: hidden;
+  padding: 10px 20px;
+  animation: fadeIn 0.3s ease-in-out; /* Animation légère */
+}
+
+/* Animation au chargement de la modal */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d4c1bf; /* Ligne séparatrice */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 18px; /* Taille du titre */
+  font-weight: bold;
+  color: #493f3f; /* Couleur sombre */
+}
+
+button.close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #6a5f5f;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+button.close:hover {
+  color: #000;
+}
+
+/* Corps de la modal */
+.modal-body {
+  font-family: 'Arial', sans-serif;
+  color: #5c5151; /* Texte gris foncé */
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.modal-body h6 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.modal-body p {
+  margin: 5px 0;
+}
+
+/* Statut "Done" */
+.modal-body .fa-icon {
+  margin-left: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.modal-body .fa-icon:hover {
+  transform: scale(1.1); /* Zoom léger lors du survol */
+}
+
+/* Pied de la modal */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end; /* Aligner les boutons à droite */
+  border-top: 1px solid #d4c1bf;
+  padding-top: 10px;
+}
+
+button.btn-secondary {
+  background-color: #6a5f5f;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button.btn-secondary:hover {
+  background-color: #493f3f;
+}
+
+/* Responsive pour petites tailles d'écran */
+@media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 90%; /* Réduit la taille dans les petits écrans */
+  }
+  .modal-content {
+    padding: 10px;
+  }
+}

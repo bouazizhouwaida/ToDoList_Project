@@ -1,0 +1,23 @@
+<div class="header">
+  <h1>My Todo List</h1>
+  <div class="nav-buttons">
+
+    <button class="btn btn-dark" *ngIf="isLoggedIn && !isLoginPage">
+      <a routerLink="/todos" routerLinkActive="active" style="text-decoration: none; color: white;">Todos</a>
+    </button>
+
+    <button class="btn btn-dark" *ngIf="isLoggedIn && !isLoginPage" (click)="openModal()">New</button>
+
+
+    <button class="btn btn-dark" *ngIf="isLoggedIn" (click)="onLogout()">Log Out</button>
+
+
+    <button class="btn btn-dark" *ngIf="isLoginPage">
+      <a routerLink="/sign-in" routerLinkActive="active" style="text-decoration: none; color: white;">Sign In</a>
+    </button>
+  </div>
+</div>
+
+
+
+  <app-todo-templatedriven-form></app-todo-templatedriven-form>

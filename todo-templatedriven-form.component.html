@@ -1,0 +1,47 @@
+<div id="todoModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Task</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              [(ngModel)]="newTodo.title"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              [(ngModel)]="newTodo.date"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              [(ngModel)]="newTodo.description"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="todo-container">
+  <div *ngFor="let todo of todos" class="todo-item">
+    <span>{{ todo.title }}</span>
+    <div class="todo-actions">
+      <!-- View Todo Details -->
+      <fa-icon [icon]="faList" (click)="displayTodoDetail(todo)"></fa-icon>
+
+      <!-- Update Todo -->
+      <fa-icon
+        [icon]="faPenToSquare"
+        class="edit-icon"
+        (click)="openUpdateModal(todo)"
+      ></fa-icon>
+
+      <!-- Delete Todo -->
+      <fa-icon
+        [icon]="faTrash"
+        class="delete-icon"
+        (click)="deleteTodo(todo)"
+      ></fa-icon>
+    </div>
+  </div>
+</div>
+
+<!-- Todo Detail Modal -->
+<app-todo-detail
+  *ngIf="selectedTodo"
+  [todo]="selectedTodo"
+  (close)="closeModal()"
+></app-todo-detail>
+
+<!-- Modale de mise à jour -->
+
+<app-update-todo
+  *ngIf="selectedTodoUpdate"
+  [todo]="selectedTodoUpdate"
+  (close)="closeModal()"
+  (todoUpdated)="onTodoUpdated($event)" 
+></app-update-todo>
+

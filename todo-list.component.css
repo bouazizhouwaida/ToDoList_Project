@@ -1,0 +1,36 @@
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbf3e8;
+  border: 1px solid #ececec;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.todo-actions {
+  display: flex; /* Utilisation de flexbox */
+  gap: 20px; /* Agrandissement de l'espace entre les icônes */
+}
+
+.icon {
+  cursor: pointer;
+  color: #333;
+}
+
+.icon:hover {
+  color: #007bff;
+}
